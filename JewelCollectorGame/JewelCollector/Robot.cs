@@ -47,6 +47,7 @@ public class Robot:ICell
                     x = x+1;                    
                     Map.InsertInMap(this);
                 }
+                Energy--;
                 break;
             case "d":
                 if(y+1>=10) break;
@@ -64,24 +65,51 @@ public class Robot:ICell
     public void GetAdjacent() {
         if(y-1>=0){
             if (Map.IsJewel(x, y-1)){
-                robotBag.InsertInBag(Map.GetJewel(x,y-1));
-            } 
+                var jewel = Map.GetJewel(x,y-1);
+                robotBag.InsertInBag(jewel);
+                
+                if (jewel.objRepresentation == "JB"){
+                    Energy += 5;
+                }
+            }else if (Map.IsTree(x, y-1)){
+                Energy += 3;
+            }
         }
         if(x-1>=0){
             if (Map.IsJewel(x-1, y)){
-                robotBag.InsertInBag(Map.GetJewel(x-1, y));
-            } 
+                var jewel = Map.GetJewel(x-1, y);
+                robotBag.InsertInBag(jewel);
+                if (jewel.objRepresentation == "JB"){
+                    Energy += 5;
+                }
+            } else if (Map.IsTree(x-1, y)){
+                Energy += 3;
+            }
         }
         if(y+1<10){
             if (Map.IsJewel(x, y+1)){
-                robotBag.InsertInBag(Map.GetJewel(x, y+1));
-            } 
+                var jewel = Map.GetJewel(x, y+1);
+                robotBag.InsertInBag(jewel);
+                //Mudar aqui
+                if (jewel.objRepresentation == "JB"){
+                    Energy += 5;
+                } 
+            } else if (Map.IsTree(x, y+1)){
+                Energy += 3;
+            }
         }
         if(x+1<10){
             if (Map.IsJewel(x+1, y)){
-                robotBag.InsertInBag(Map.GetJewel(x+1, y));
-            } 
+                var jewel = Map.GetJewel(x+1, y);
+                robotBag.InsertInBag(jewel);
+                if (jewel.objRepresentation == "JB"){
+                    Energy += 5;
+                }
+            } else if (Map.IsTree(x+1, y)){
+                Energy += 3;
+            }
         }
+    
     }
 
     public void PrintStatus(){

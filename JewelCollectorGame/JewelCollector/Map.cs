@@ -23,6 +23,16 @@ static public class Map
     static public bool IsBlocked(int X, int Y){
         return GameMap[X,Y].blockMovement;
     }
+    static public bool IsTree(int X, int Y){
+        if(GameMap[X,Y] is Obstacle){
+            return GameMap[X,Y].objRepresentation == "##";
+            
+        } else {
+            //Obstacle obstacle = new Obstacle(-1,-1,GameMap[X,Y].objRepresentation);
+           return false; 
+        }
+    }
+
     static public bool IsJewel(int X, int Y){
         return GameMap[X,Y] is Jewel;
     }
