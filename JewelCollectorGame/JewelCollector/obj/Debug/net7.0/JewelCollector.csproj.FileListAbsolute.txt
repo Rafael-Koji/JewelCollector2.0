@@ -1,0 +1,30 @@
+c:\Users\msft66\Documents\INF-0990\JewelCollectorGame\JewelCollector\bin\Debug\net7.0\JewelCollector.exe
+c:\Users\msft66\Documents\INF-0990\JewelCollectorGame\JewelCollector\bin\Debug\net7.0\JewelCollector.deps.json
+c:\Users\msft66\Documents\INF-0990\JewelCollectorGame\JewelCollector\bin\Debug\net7.0\JewelCollector.runtimeconfig.json
+c:\Users\msft66\Documents\INF-0990\JewelCollectorGame\JewelCollector\bin\Debug\net7.0\JewelCollector.dll
+c:\Users\msft66\Documents\INF-0990\JewelCollectorGame\JewelCollector\bin\Debug\net7.0\JewelCollector.pdb
+c:\Users\msft66\Documents\INF-0990\JewelCollectorGame\JewelCollector\obj\Debug\net7.0\JewelCollector.csproj.AssemblyReference.cache
+c:\Users\msft66\Documents\INF-0990\JewelCollectorGame\JewelCollector\obj\Debug\net7.0\JewelCollector.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\msft66\Documents\INF-0990\JewelCollectorGame\JewelCollector\obj\Debug\net7.0\JewelCollector.AssemblyInfoInputs.cache
+c:\Users\msft66\Documents\INF-0990\JewelCollectorGame\JewelCollector\obj\Debug\net7.0\JewelCollector.AssemblyInfo.cs
+c:\Users\msft66\Documents\INF-0990\JewelCollectorGame\JewelCollector\obj\Debug\net7.0\JewelCollector.csproj.CoreCompileInputs.cache
+c:\Users\msft66\Documents\INF-0990\JewelCollectorGame\JewelCollector\obj\Debug\net7.0\JewelCollector.dll
+c:\Users\msft66\Documents\INF-0990\JewelCollectorGame\JewelCollector\obj\Debug\net7.0\refint\JewelCollector.dll
+c:\Users\msft66\Documents\INF-0990\JewelCollectorGame\JewelCollector\obj\Debug\net7.0\JewelCollector.pdb
+c:\Users\msft66\Documents\INF-0990\JewelCollectorGame\JewelCollector\obj\Debug\net7.0\JewelCollector.genruntimeconfig.cache
+c:\Users\msft66\Documents\INF-0990\JewelCollectorGame\JewelCollector\obj\Debug\net7.0\ref\JewelCollector.dll
+d:\TechMS\C# Básico\INF-0990\JewelCollectorGame\JewelCollector\bin\Debug\net7.0\JewelCollector.exe
+d:\TechMS\C# Básico\INF-0990\JewelCollectorGame\JewelCollector\bin\Debug\net7.0\JewelCollector.deps.json
+d:\TechMS\C# Básico\INF-0990\JewelCollectorGame\JewelCollector\bin\Debug\net7.0\JewelCollector.runtimeconfig.json
+d:\TechMS\C# Básico\INF-0990\JewelCollectorGame\JewelCollector\bin\Debug\net7.0\JewelCollector.dll
+d:\TechMS\C# Básico\INF-0990\JewelCollectorGame\JewelCollector\bin\Debug\net7.0\JewelCollector.pdb
+d:\TechMS\C# Básico\INF-0990\JewelCollectorGame\JewelCollector\obj\Debug\net7.0\JewelCollector.csproj.AssemblyReference.cache
+d:\TechMS\C# Básico\INF-0990\JewelCollectorGame\JewelCollector\obj\Debug\net7.0\JewelCollector.GeneratedMSBuildEditorConfig.editorconfig
+d:\TechMS\C# Básico\INF-0990\JewelCollectorGame\JewelCollector\obj\Debug\net7.0\JewelCollector.AssemblyInfoInputs.cache
+d:\TechMS\C# Básico\INF-0990\JewelCollectorGame\JewelCollector\obj\Debug\net7.0\JewelCollector.AssemblyInfo.cs
+d:\TechMS\C# Básico\INF-0990\JewelCollectorGame\JewelCollector\obj\Debug\net7.0\JewelCollector.csproj.CoreCompileInputs.cache
+d:\TechMS\C# Básico\INF-0990\JewelCollectorGame\JewelCollector\obj\Debug\net7.0\JewelCollector.dll
+d:\TechMS\C# Básico\INF-0990\JewelCollectorGame\JewelCollector\obj\Debug\net7.0\refint\JewelCollector.dll
+d:\TechMS\C# Básico\INF-0990\JewelCollectorGame\JewelCollector\obj\Debug\net7.0\JewelCollector.pdb
+d:\TechMS\C# Básico\INF-0990\JewelCollectorGame\JewelCollector\obj\Debug\net7.0\JewelCollector.genruntimeconfig.cache
+d:\TechMS\C# Básico\INF-0990\JewelCollectorGame\JewelCollector\obj\Debug\net7.0\ref\JewelCollector.dll
