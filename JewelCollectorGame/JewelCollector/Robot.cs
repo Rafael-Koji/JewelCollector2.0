@@ -7,8 +7,8 @@ public class Robot:ICell
     public int y{get;set;}
     public string objRepresentation{get; set;}
     public bool blockMovement{get; set;}
-    public int energy{get;set;}
-
+    public int Energy {get; set; } = 5; 
+    
     public Robot(int X, int Y){
         x = X;
         y = Y;
@@ -18,6 +18,10 @@ public class Robot:ICell
     }
 
     public void Move(string direction){
+
+        if (Energy <= 0 ){
+            throw new Exception("Game over"); 
+        }
         switch (direction){
             case "a":
                 if(y-1<0) break;
@@ -26,6 +30,7 @@ public class Robot:ICell
                     y = y-1;
                     Map.InsertInMap(this);                    
                 }
+                Energy--;
                 break;
             case "w":
                 if(x-1<0) break;
@@ -34,6 +39,7 @@ public class Robot:ICell
                     x = x-1;
                     Map.InsertInMap(this);
                 }
+                Energy--;
                 break;
             case "s":
                 if(x+1>=10) break;
@@ -50,6 +56,7 @@ public class Robot:ICell
                     y = y+1;
                     Map.InsertInMap(this);
                 }
+                Energy--;
                 break;
         }
 
