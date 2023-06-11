@@ -7,12 +7,14 @@ public class Robot:ICell
     public int y{get;set;}
     public string objRepresentation{get; set;}
     public bool blockMovement{get; set;}
+    public int energy{get;set;}
 
     public Robot(int X, int Y){
         x = X;
         y = Y;
         objRepresentation = "ME";
         blockMovement = true;
+        energy = 5;
     }
 
     public void Move(string direction){
@@ -74,6 +76,12 @@ public class Robot:ICell
                 robotBag.InsertInBag(Map.GetJewel(x+1, y));
             } 
         }
+    }
+
+    public void PrintStatus(){
+        int TotalPoints = robotBag.GetScore();
+        int ItensBag = robotBag.GetTotalJewels();
+        Console.WriteLine($"\nItens Bag: {ItensBag} - Total Points: {TotalPoints} - Energy: {this.energy} - x:{this.x}, y: {this.y}\n\n");
     }
 
 }

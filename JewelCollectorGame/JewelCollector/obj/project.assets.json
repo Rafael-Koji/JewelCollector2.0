@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\TechMS\\C# Básico\\INF-0990\\JewelCollectorGame\\JewelCollector\\JewelCollector.csproj",
+      "projectUniqueName": "d:\\TechMS\\C# Básico\\Git\\JewelCollector2.0\\JewelCollectorGame\\JewelCollector\\JewelCollector.csproj",
       "projectName": "JewelCollector",
-      "projectPath": "d:\\TechMS\\C# Básico\\INF-0990\\JewelCollectorGame\\JewelCollector\\JewelCollector.csproj",
+      "projectPath": "d:\\TechMS\\C# Básico\\Git\\JewelCollector2.0\\JewelCollectorGame\\JewelCollector\\JewelCollector.csproj",
       "packagesPath": "C:\\Users\\ninja\\.nuget\\packages\\",
-      "outputPath": "d:\\TechMS\\C# Básico\\INF-0990\\JewelCollectorGame\\JewelCollector\\obj\\",
+      "outputPath": "d:\\TechMS\\C# Básico\\Git\\JewelCollector2.0\\JewelCollectorGame\\JewelCollector\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ninja\\AppData\\Roaming\\NuGet\\NuGet.Config"
