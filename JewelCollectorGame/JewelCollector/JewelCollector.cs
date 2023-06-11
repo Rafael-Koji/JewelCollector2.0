@@ -50,36 +50,46 @@ public class JewelCollector {
           do {        
                Console.WriteLine("Enter the command: ");
                ConsoleKeyInfo command = Console.ReadKey(true);
-               switch (command.Key.ToString()){
-                    case "Q": 
-                         running = false;
-                         break;
-                    case "W":
-                         OnRobotMove(command.Key.ToString().ToLower());
-                         OnMapChange();
-                         OnPlayerStatus();
-                         break;
-                    case "A":
-                         OnRobotMove(command.Key.ToString().ToLower());
-                         OnMapChange();
-                         OnPlayerStatus();
-                         break;               
-                    case "S":
-                         OnRobotMove(command.Key.ToString().ToLower());
-                         OnMapChange();
-                         OnPlayerStatus();
-                         break;               
-                    case "D":
-                         OnRobotMove(command.Key.ToString().ToLower());
-                         OnMapChange();
-                         OnPlayerStatus();
-                         break;               
-                    case "G":
-                         OnGetAdj();
-                         OnMapChange();
-                         OnPlayerStatus();
-                         break;
-               }                
+               try{
+                    switch (command.Key.ToString()){
+                         case "Q": 
+                              running = false;
+                              break;
+                         case "W":
+                              OnRobotMove(command.Key.ToString().ToLower());
+                              OnMapChange();
+                              OnPlayerStatus();
+                              break;
+                         case "A":
+                              OnRobotMove(command.Key.ToString().ToLower());
+                              OnMapChange();
+                              OnPlayerStatus();
+                              break;               
+                         case "S":
+                              OnRobotMove(command.Key.ToString().ToLower());
+                              OnMapChange();
+                              OnPlayerStatus();
+                              break;               
+                         case "D":
+                              OnRobotMove(command.Key.ToString().ToLower());
+                              OnMapChange();
+                              OnPlayerStatus();
+                              break;               
+                         case "G":
+                              OnGetAdj();
+                              OnMapChange();
+                              OnPlayerStatus();
+                              break;
+                    }                
+               }catch(OutOfMapException e){
+                    Console.WriteLine("Impossible to make this move! Out of the bounds of the map!");
+               }catch(OccupiedPositionException e){
+                    Console.WriteLine("Impossible to make this move! Position already occupied!");
+               }catch(GameOverException e){
+                    Console.WriteLine("Robot ran out of energy!");
+                    Console.WriteLine("GAME OVER!");
+                    running = false;
+               }
           } while (running);
      }
 }

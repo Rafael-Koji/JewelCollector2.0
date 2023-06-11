@@ -19,44 +19,74 @@ public class Robot:ICell
     public void Move(string direction){
 
         if (Energy <= 0 ){
-            throw new Exception("Game over"); 
+            Console.WriteLine($"\nOut of Energy.");
+            throw new GameOverException();
+             
         }
         switch (direction){
             case "a":
-                if(y-1<0) break;
+                if(y-1<0){
+                    Console.WriteLine($"\nOutOfMapException.");
+                    throw new OutOfMapException();
+                } 
                 if (!Map.IsBlocked(x, y-1)){
                     Map.DeleteFromMap(x, y);
                     y = y-1;
-                    Map.InsertInMap(this);                    
+                    Map.InsertInMap(this);    
+                    Energy--;                
+                }else{
+                    Console.WriteLine($"\n OccupiedPositionException:x({x}), y({y})");
+                    throw new OccupiedPositionException();
                 }
-                Energy--;
+                
                 break;
             case "w":
-                if(x-1<0) break;
+                if(x-1<0){
+                    Console.WriteLine($"\nOutOfMapException.");
+                    throw new OutOfMapException();
+                }
                 if (!Map.IsBlocked(x-1, y)){
                     Map.DeleteFromMap(x, y);
                     x = x-1;
                     Map.InsertInMap(this);
+                    Energy--;
+                }else{
+                    Console.WriteLine($"\n OccupiedPositionException:x({x}), y({y})");
+                    throw new OccupiedPositionException();
                 }
-                Energy--;
+                
                 break;
             case "s":
-                if(x+1>=10) break;
+                if(x+1>=10){
+                    Console.WriteLine($"\nOutOfMapException.");
+                    throw new OutOfMapException();
+                }
                 if (!Map.IsBlocked(x+1, y)){
                     Map.DeleteFromMap(x, y);
                     x = x+1;                    
                     Map.InsertInMap(this);
+                    Energy--;
+                }else{
+                    Console.WriteLine($"\n OccupiedPositionException:x({x}), y({y})");
+                    throw new OccupiedPositionException();
                 }
-                Energy--;
+                
                 break;
             case "d":
-                if(y+1>=10) break;
+                if(y+1>=10){
+                    Console.WriteLine($"\nOutOfMapException.");
+                    throw new OutOfMapException();
+                }
                 if (!Map.IsBlocked(x, y+1)){
                     Map.DeleteFromMap(x, y);
                     y = y+1;
                     Map.InsertInMap(this);
+                    Energy--;
+                }else{
+                    Console.WriteLine($"\n OccupiedPositionException:x({x}), y({y})");
+                    throw new OccupiedPositionException();
                 }
-                Energy--;
+                
                 break;
         }
 
