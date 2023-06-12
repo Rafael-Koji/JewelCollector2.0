@@ -1,17 +1,41 @@
 ﻿namespace JewelCollectorGame;
 
+///<summary>
+///The JewelCollector class holds the logic of the game.
+///</summary>
+
 public class JewelCollector {
 
+     /// <summary>
+     /// Delegate for moving the robot.
+     /// </summary>
+     /// <param name="direction">The direction in which the robot will move.</param>
      delegate void MoveRobot(string direction);
+
+     /// <summary>
+     /// Delegate for getting adjacent objects.
+     /// </summary>
      delegate void GetAdj();
+
+     /// <summary>
+     /// Delegate for updating the map.
+     /// </summary>
      delegate void UpdateMap();
+
+     /// <summary>
+     /// Delegate for updating the scoreboard.
+     /// </summary>
      delegate void Scoreboard();
 
+     //Events
      static event MoveRobot OnRobotMove;
      static event GetAdj OnGetAdj;
      static event UpdateMap OnMapChange;
      static event Scoreboard OnPlayerStatus;
 
+     /// <summary>
+     /// The entry point of the game.
+     /// </summary>
      public static void Main() {
 
           bool running = true;
