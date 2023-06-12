@@ -10,7 +10,12 @@ static public class Map
     /// </summary>
     static private ICell[,] GameMap;
     static public int gridSize{get;set;}
+
+    /// <summary>
+    /// Represents the current game level.
+    /// </summary>
     static public int CurrentLevel{get; set;}
+
     /// <summary>
     /// Initializes the game map with empty cells.
     /// </summary>
@@ -53,6 +58,9 @@ static public class Map
           Map.InsertInMap(new Obstacle(2,5, "$$"));
     }
 
+    /// <summary>
+    /// Creates the game map with randomly placed cells.
+    /// </summary>
     static private void RandomMap(Robot rob){
         Random rNum = new Random(1);
         Map.InsertInMap(rob);
@@ -174,9 +182,10 @@ static public class Map
         }
     }
 
-    /// <summary>
-    /// Verifies if the current level is completed.
+     /// <summary>
+    /// Checks if the level is completed by verifying if all jewels have been collected.
     /// </summary>
+    /// <returns>true if all jewels are collected, false otherwise.</returns>
     static public bool LevelComplete(){
         bool gotAllJewels = true;
 

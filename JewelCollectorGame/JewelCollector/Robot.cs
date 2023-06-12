@@ -186,6 +186,9 @@ public class Robot:ICell
         Console.WriteLine($"\nItens Bag: {ItensBag} - Total Points: {TotalPoints} - Energy: {this.Energy} - x:{this.x}, y: {this.y}\n\n");
     }
 
+    /// <summary>
+    /// Reset the robot's position.
+    /// </summary>
     public void ResetPosition(){
         this.x = 0;
         this.y = 0;
