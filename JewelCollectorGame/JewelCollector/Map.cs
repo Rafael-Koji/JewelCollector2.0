@@ -8,14 +8,16 @@ static public class Map
     /// <summary>
     /// Represents the game map as a 2D array of ICell objects.
     /// </summary>
-    static private ICell[,] GameMap = new ICell[10,10];
-
+    static private ICell[,] GameMap;
+    static public int gridSize{get;set;}
+    static public int CurrentLevel{get; set;}
     /// <summary>
     /// Initializes the game map with empty cells.
     /// </summary>
-    static public void StartMap(){
-        for(int i=0; i<10; i++){
-            for(int j=0; j<10; j++){
+    static public void StartMap(Robot rob){
+        GameMap = new ICell[gridSize,gridSize];
+        for(int i=0; i<gridSize; i++){
+            for(int j=0; j<gridSize; j++){
             GameMap[i, j] = new Empty(i,j);
             }
         }
@@ -49,6 +51,58 @@ static public class Map
           Map.InsertInMap(new Obstacle(5,9, "$$"));
           Map.InsertInMap(new Obstacle(8,3, "$$"));
           Map.InsertInMap(new Obstacle(2,5, "$$"));
+    }
+
+    static private void RandomMap(Robot rob){
+        Random rNum = new Random(1);
+        Map.InsertInMap(rob);
+
+        for(int i = 0; i < 3+CurrentLevel; i++){
+            int xRandom;
+            int yRandom;
+            do{
+                xRandom = rNum.Next(0, gridSize);
+                yRandom = rNum.Next(0, gridSize);
+            }while(xRandom == 0 && yRandom == 0);
+
+            Map.InsertInMap(new Jewel(xRandom, yRandom, "JB"));
+        }
+        for(int i = 0; i < 3+CurrentLevel; i++){
+            int xRandom;
+            int yRandom;
+            do{
+                xRandom = rNum.Next(0, gridSize);
+                yRandom = rNum.Next(0, gridSize);
+            }while(xRandom == 0 && yRandom == 0);
+            Map.InsertInMap(new Jewel(xRandom, yRandom, "JG"));
+        }
+        for(int i = 0; i < 3+CurrentLevel; i++){
+            int xRandom;
+            int yRandom;
+            do{
+                xRandom = rNum.Next(0, gridSize);
+                yRandom = rNum.Next(0, gridSize);
+            }while(xRandom == 0 && yRandom == 0);
+            Map.InsertInMap(new Jewel(xRandom, yRandom, "JR"));
+        }
+        for(int i = 0; i < 10+CurrentLevel; i++){
+            int xRandom;
+            int yRandom;
+            do{
+                xRandom = rNum.Next(0, gridSize);
+                yRandom = rNum.Next(0, gridSize);
+            }while(xRandom == 0 && yRandom == 0);
+            Map.InsertInMap(new Obstacle(xRandom, yRandom, "$$"));
+        }
+        for(int i = 0; i < 10+CurrentLevel; i++){
+            int xRandom;
+            int yRandom;
+            do{
+                xRandom = rNum.Next(0, gridSize);
+                yRandom = rNum.Next(0, gridSize);
+            }while(xRandom == 0 && yRandom == 0);
+            Map.InsertInMap(new Obstacle(xRandom, yRandom, "##"));
+        }
     }
 
     
