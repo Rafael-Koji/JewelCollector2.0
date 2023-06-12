@@ -28,7 +28,9 @@ static public class Map
             RandomMap(rob);
         }
     }
-
+    /// <summary>
+    /// Creates the game map with fixed cells.
+    /// </summary>
     static private void FixedMap(Robot rob){
         // Insert objects in map
           Map.InsertInMap(rob);
@@ -62,6 +64,9 @@ static public class Map
         GameMap[obj.x, obj.y] = obj;
     }
 
+    /// <summary>
+    /// Creates the game map with random cells.
+    /// </summary>
     static private void RandomMap(Robot rob){
         Random rNum = new Random(1);
         Map.InsertInMap(rob);
@@ -172,6 +177,9 @@ static public class Map
         }
     }
 
+    /// <summary>
+    /// Verifies if the current level is completed.
+    /// </summary>
     static public bool LevelComplete(){
         bool gotAllJewels = true;
 
