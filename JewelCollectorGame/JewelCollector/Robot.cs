@@ -57,7 +57,7 @@ public class Robot:ICell
                 
                 break;
             case "s":
-                if(x+1>=10){
+                if(x+1>=Map.gridSize){
                     Console.WriteLine($"\nOutOfMapException.");
                     throw new OutOfMapException();
                 }
@@ -73,7 +73,7 @@ public class Robot:ICell
                 
                 break;
             case "d":
-                if(y+1>=10){
+                if(y+1>=Map.gridSize){
                     Console.WriteLine($"\nOutOfMapException.");
                     throw new OutOfMapException();
                 }
@@ -116,7 +116,7 @@ public class Robot:ICell
                 Energy += 3;
             }
         }
-        if(y+1<10){
+        if(y+1<Map.gridSize){
             if (Map.IsJewel(x, y+1)){
                 var jewel = Map.GetJewel(x, y+1);
                 robotBag.InsertInBag(jewel);
@@ -128,7 +128,7 @@ public class Robot:ICell
                 Energy += 3;
             }
         }
-        if(x+1<10){
+        if(x+1<Map.gridSize){
             if (Map.IsJewel(x+1, y)){
                 var jewel = Map.GetJewel(x+1, y);
                 robotBag.InsertInBag(jewel);
@@ -146,6 +146,11 @@ public class Robot:ICell
         int TotalPoints = robotBag.GetScore();
         int ItensBag = robotBag.GetTotalJewels();
         Console.WriteLine($"\nItens Bag: {ItensBag} - Total Points: {TotalPoints} - Energy: {this.Energy} - x:{this.x}, y: {this.y}\n\n");
+    }
+
+    public void ResetPosition(){
+        this.x = 0;
+        this.y = 0;
     }
 
 }
