@@ -4,21 +4,18 @@ namespace JewelCollectorGame;
 /// Represents the Map in the JewelCollector game.
 /// </summary>
 static public class Map
-{
-     /// <summary>
+{   
+    /// <summary>
     /// Represents the game map as a 2D array of ICell objects.
     /// </summary>
-    static private ICell[,] GameMap;
-    static public int gridSize{get;set;}
-    static public int CurrentLevel{get; set;}
+    static private ICell[,] GameMap = new ICell[10,10];
 
     /// <summary>
     /// Initializes the game map with empty cells.
     /// </summary>
-    static public void StartMap(Robot rob){
-        GameMap = new ICell[gridSize,gridSize];
-        for(int i=0; i<gridSize; i++){
-            for(int j=0; j<gridSize; j++){
+    static public void StartMap(){
+        for(int i=0; i<10; i++){
+            for(int j=0; j<10; j++){
             GameMap[i, j] = new Empty(i,j);
             }
         }
@@ -54,70 +51,16 @@ static public class Map
           Map.InsertInMap(new Obstacle(2,5, "$$"));
     }
 
+    
     /// <summary>
     /// Inserts an object into the game map.
     /// </summary>
     /// <typeparam name="T">The type of object to insert, which implements ICell.</typeparam>
     /// <param name="obj">The object to insert into the map.</param>
-    
     static public void InsertInMap<T>(T obj) where T : ICell{
         GameMap[obj.x, obj.y] = obj;
     }
 
-    /// <summary>
-    /// Creates the game map with random cells.
-    /// </summary>
-    static private void RandomMap(Robot rob){
-        Random rNum = new Random(1);
-        Map.InsertInMap(rob);
-
-        for(int i = 0; i < 3+CurrentLevel; i++){
-            int xRandom;
-            int yRandom;
-            do{
-                xRandom = rNum.Next(0, gridSize);
-                yRandom = rNum.Next(0, gridSize);
-            }while(xRandom == 0 && yRandom == 0);
-
-            Map.InsertInMap(new Jewel(xRandom, yRandom, "JB"));
-        }
-        for(int i = 0; i < 3+CurrentLevel; i++){
-            int xRandom;
-            int yRandom;
-            do{
-                xRandom = rNum.Next(0, gridSize);
-                yRandom = rNum.Next(0, gridSize);
-            }while(xRandom == 0 && yRandom == 0);
-            Map.InsertInMap(new Jewel(xRandom, yRandom, "JG"));
-        }
-        for(int i = 0; i < 3+CurrentLevel; i++){
-            int xRandom;
-            int yRandom;
-            do{
-                xRandom = rNum.Next(0, gridSize);
-                yRandom = rNum.Next(0, gridSize);
-            }while(xRandom == 0 && yRandom == 0);
-            Map.InsertInMap(new Jewel(xRandom, yRandom, "JR"));
-        }
-        for(int i = 0; i < 10+CurrentLevel; i++){
-            int xRandom;
-            int yRandom;
-            do{
-                xRandom = rNum.Next(0, gridSize);
-                yRandom = rNum.Next(0, gridSize);
-            }while(xRandom == 0 && yRandom == 0);
-            Map.InsertInMap(new Obstacle(xRandom, yRandom, "$$"));
-        }
-        for(int i = 0; i < 10+CurrentLevel; i++){
-            int xRandom;
-            int yRandom;
-            do{
-                xRandom = rNum.Next(0, gridSize);
-                yRandom = rNum.Next(0, gridSize);
-            }while(xRandom == 0 && yRandom == 0);
-            Map.InsertInMap(new Obstacle(xRandom, yRandom, "##"));
-        }
-    }
     /// <summary>
     /// Checks if a cell at a given location is blocked.
     /// </summary>
