@@ -1,14 +1,43 @@
 namespace JewelCollectorGame;
 
+/// <summary>
+/// Represents the Robot in the JewelCollector game.
+/// </summary>
 public class Robot:ICell
 {
+    /// <summary>
+    /// Represents the robot's bag of collected items.
+    /// </summary>
     static Bag robotBag = new Bag();
+
+    /// <summary>
+    /// Represents the x-coordinate of the robot on the map.
+    /// </summary
     public int x{get;set;}
+
+    /// <summary>
+    /// Represents the y-coordinate of the robot on the map.
+    /// </summary>
     public int y{get;set;}
+
+    /// <summary>
+    /// Represents the symbol that will represent the robot on the map.
+    /// </summary>
     public string objRepresentation{get; set;}
+
+    /// <summary>
+    /// Represents whether the robot's current position blocks movement.
+    /// </summary>
     public bool blockMovement{get; set;}
+
+    /// <summary>
+    /// Represents the robot's energy level.
+    /// </summary>
     public int Energy {get; set; } = 5; 
 
+    /// <summary>
+    /// Constructs a new instance of the Robot class.
+    /// </summary>
     public Robot(int X, int Y){
         x = X;
         y = Y;
@@ -16,6 +45,9 @@ public class Robot:ICell
         blockMovement = true;
     }
 
+    /// <summary>
+    /// Moves the robot in a specified direction.
+    /// </summary>
     public void Move(string direction){
 
         if (Energy <= 0 ){
@@ -92,6 +124,9 @@ public class Robot:ICell
 
     }
 
+    /// <summary>
+    /// Gets the items adjacent to the robot.
+    /// </summary>
     public void GetAdjacent() {
         if(y-1>=0){
             if (Map.IsJewel(x, y-1)){
@@ -142,6 +177,9 @@ public class Robot:ICell
     
     }
 
+    /// <summary>
+    /// Prints the robot's status to the console.
+    /// </summary>
     public void PrintStatus(){
         int TotalPoints = robotBag.GetScore();
         int ItensBag = robotBag.GetTotalJewels();
