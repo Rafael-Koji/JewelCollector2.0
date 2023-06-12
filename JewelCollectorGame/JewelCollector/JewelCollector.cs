@@ -31,7 +31,7 @@ public static class JewelCollector {
      static event GetAdj OnGetAdj;
      static event UpdateMap OnMapChange;
      static event Scoreboard OnPlayerStatus;
-     
+
      /// <summary>
      /// The entry point of the game.
      /// </summary>

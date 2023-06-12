@@ -117,7 +117,7 @@ static public class Map
             }while(xRandom == 0 && yRandom == 0);
             Map.InsertInMap(new Obstacle(xRandom, yRandom, "##"));
         }
-
+    }
     /// <summary>
     /// Checks if a cell at a given location is blocked.
     /// </summary>
